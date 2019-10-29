@@ -23,6 +23,7 @@
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/bootstrap/bootstrap.css">
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/styles1.css">
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/font-awesome.min.css">
+  
 	<?php wp_head(); ?>
 </head>
 

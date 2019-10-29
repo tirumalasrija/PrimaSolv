@@ -128,7 +128,8 @@ function primasolv_content_width() {
 }
 add_action( 'after_setup_theme', 'primasolv_content_width', 0 );
 register_nav_menu( 'top', __( 'Top Menu', 'primasolv' ) );
-
+register_nav_menu( 'services', __( 'Services Menu', 'primasolv' ) );
+register_nav_menu( 'information', __( 'Information Menu', 'primasolv' ) );
 class Description_Walker extends Walker_Nav_Menu
 {
     /**
@@ -242,6 +243,19 @@ function create_posttype() {
             'rewrite' => array('slug' => 'clients'),
         )
     );
+                register_post_type( 'capabilities',
+    // CPT Options
+        array(
+            'labels' => array(
+                'name' => __( 'Capabilities' ),
+                'singular_name' => __( 'Capability' )
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'rewrite' => array('slug' => 'capabilities'),
+        )
+    );
+
 }
 // Hooking up our function to theme setup
 add_action( 'init', 'create_posttype' );

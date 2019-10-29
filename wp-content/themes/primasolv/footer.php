@@ -18,34 +18,55 @@
 	<div class="container footer-top">
         <div class="row">
             <div class="footer-menu col">
-                <p>About</p>
-                <ul>
-                    <li><a href="#">Vision</a></li>
-                    <li><a href="#">Mission</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">Careers</a></li>
-                </ul>
+                <p>About</p>                
+                  <?php
+            $defaults = array(
+                'theme_location'  => 'footer',
+                'menu'            => '',
+                'container'       => false,
+                'container_class' => '',
+                'container_id'    => '', 
+               'items_wrap'      => '<ul>%3$s</ul>',
+                'depth'           => 1,
+                'walker'          => ''
+                );
+            wp_nav_menu( $defaults );
+            ?>
+            </div>
+            <div class="footer-menu col">
+                <p>Information</p>
+                 <?php
+            $defaults = array(
+                'theme_location'  => 'information',
+                'menu'            => '',
+                'container'       => false,
+                'container_class' => '',
+                'container_id'    => '', 
+               'items_wrap'      => '<ul>%3$s</ul>',
+                'depth'           => 1,
+                'walker'          => ''
+                );
+            wp_nav_menu( $defaults );
+            ?>
             </div>
             <div class="footer-menu col">
                 <p>Services</p>
-                <ul>
-                    <li><a href="#">vehicle diagnostics </a></li>
-                    <li><a href="#">AWS cloud</a></li>
-                    <li><a href="#">data analytics</a></li>
-                    <li><a href="#">staffing</a></li>
-                </ul>
+                <?php
+            $defaults = array(
+                'theme_location'  => 'services',
+                'menu'            => '',
+                'container'       => false,
+                'container_class' => '',
+                'container_id'    => '', 
+               'items_wrap'      => '<ul>%3$s</ul>',
+                'depth'           => 1,
+                'walker'          => ''
+                );
+            wp_nav_menu( $defaults );
+            ?>
             </div>
-            <div class="footer-menu col">
-                <p>Servieces</p>
-                <ul>
-                    <li><a href="#">mobile applications</a></li>
-                    <li><a href="#">services offshore and onshore</a></li>
-                    <li><a href="#">dev apps sess apps and security</a></li>
-                    <li><a href="#">data analytics</a></li>
-                </ul>
-            </div>
-            <div class="footer-info col-4">
-                <p class="footer-msg">Share Us</p>
+            <div class="footer-info col-5">
+                <p class="footer-msg">Our online support is available <a class="callback" href="#">Send us a message</a></p>
                 <ul class="footer-social">
                     <li>
                         <a rel="nofollow" target="_blank" href="<?php echo get_field('facebook',5); ?>">
@@ -53,11 +74,20 @@
                         </a>
                     </li>
                     <li>
+                        <a rel="nofollow" target="_blank" href="mailto:<?php echo get_field('email',5); ?>">
+                            <i class="fa fa-paper-plane"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a rel="nofollow" target="_blank" href="<?php echo get_field('pinterest',5); ?>">
+                            <i class="fa fa-pinterest-p"></i>
+                        </a>
+                    </li>
+                    <li>
                         <a rel="nofollow" target="_blank" href="<?php echo get_field('youtube',5); ?>">
                             <i class="fa fa-youtube-play"></i>
                         </a>
                     </li>
-
                     <li>
                         <a rel="nofollow" target="_blank" href="<?php echo get_field('twitter',5); ?>">
                             <i class="fa fa-twitter"></i>
@@ -68,8 +98,14 @@
                             <i class="fa fa-google-plus"></i>
                         </a>
                     </li>
+                    
                 </ul>
+                <form action="#" class="form-validate">
+                    <input data-required="text" data-required-email="email" type="text" placeholder="Email address" name="email1">
+                    <input type="submit" value="Subscribe">
+                </form>
             </div>
+          
         </div>
 		
 		
@@ -162,6 +198,7 @@ $('#myModal').on('hide.bs.modal', function (e) {
       autoPlaySpeed:2000
     })
     </script>
+
 
 
 <?php wp_footer(); ?>

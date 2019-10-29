@@ -119,7 +119,7 @@
                 <?php echo get_field('introduction_content'); ?>
             </div>
             <div class="col">
-                <div class="video-btn" data-toggle="modal" data-src="https://www.youtube.com/embed/A-twOC3W558" data-target="#myModal">
+                <div class="video-btn" data-toggle="modal" data-src="<?php echo get_field('youtube_video_url'); ?>" data-target="#myModal">
                     <img src=" <?php echo get_field('video_image'); ?>" alt="">
                 </div>
             </div>
