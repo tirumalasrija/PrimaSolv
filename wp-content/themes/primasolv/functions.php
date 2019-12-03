@@ -255,6 +255,18 @@ function create_posttype() {
             'rewrite' => array('slug' => 'capabilities'),
         )
     );
+                   register_post_type( 'team',
+    // CPT Options
+        array(
+            'labels' => array(
+                'name' => __( 'Our Team' ),
+                'singular_name' => __( 'Team' )
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'rewrite' => array('slug' => 'team'),
+        )
+    );
 
 }
 // Hooking up our function to theme setup

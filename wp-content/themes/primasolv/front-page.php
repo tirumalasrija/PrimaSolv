@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 <!-- Main Content - start -->
+<!-- Main Content - start -->
 <main>
 <?php
           $loop = new WP_Query( array(
@@ -11,24 +12,18 @@
 <!-- Frontpage Slider -->
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
-      <?php $i=0; while ( $loop->have_posts() ) : $loop->the_post(); ?>
+        <?php $i=0; while ( $loop->have_posts() ) : $loop->the_post(); ?>
  <li data-target="#carouselExampleIndicators" data-slide-to="<?php echo $i; ?>" class="<?php if($i==0) echo 'active'; ?>"></li>
 
 <?php $i++; endwhile; wp_reset_query(); ?>     
-     
     </ol>
     <div class="carousel-inner">
-      
-
-<?php $i=0; while ( $loop->have_posts() ) : $loop->the_post(); ?>
+      <?php $i=0; while ( $loop->have_posts() ) : $loop->the_post(); ?>
 
   <div class="carousel-item <?php if($i==0) echo 'active'; ?>">
         <img class="d-block w-100" src="<?php echo get_field('slider_image'); ?>" alt="First slide">
       </div>
-
-<?php $i++; endwhile; wp_reset_query(); ?>
-     
-   
+<?php $i++; endwhile; wp_reset_query(); ?>  
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -39,7 +34,8 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
-
+<div class="clearfix"></div>
+	
   <div id="accordion">
       <ul>
       <li>
@@ -52,7 +48,7 @@
                 <section>
                 <h4> <?php echo get_field("section_1_title"); ?></h4>
               <?php echo get_field("section_1_content"); ?>
-              <!--  <a href="#" class="btn btn-primary">Read More..</a> -->
+           
               </section>
             </section>  
           </section>  
@@ -68,7 +64,7 @@
                 <section>
                 <h4> <?php echo get_field("section_2_title"); ?></h4>
               <?php echo get_field("section_2_content"); ?>
-              <!--  <a href="#" class="btn btn-primary">Read More..</a> -->
+           
               </section>
             </section>  
           </section>  
@@ -84,7 +80,7 @@
                 <section>
                 <h4> <?php echo get_field("section_3_title"); ?></h4>
               <?php echo get_field("section_3_content"); ?>
-               <!-- <a href="#" class="btn btn-primary">Read More..</a> -->
+              
               </section>
             </section>  
           </section>  
@@ -100,62 +96,63 @@
                 <section>
                 <h4> <?php echo get_field("section_4_title"); ?></h4>
               <?php echo get_field("section_4_content"); ?>
-              <!--  <a href="#" class="btn btn-primary">Read More..</a> -->
+            
               </section>
             </section>  
           </section>  
           </div>
       </li>
       </ul>
-      </div>
-  
+      </div> 
+
+	
       <div class="clearfix"></div>
 
-      <div class="main_sec bg-white container-fluid">
-        <div class="row text-center align-items-center">
-            <div class="col">
-                <span class="small">Watch our introduction video</span>
-                <h3 class="mb-3 mt-3 head_secondary"><?php echo get_field('introduction_title'); ?></h3>
-                <?php echo get_field('introduction_content'); ?>
-            </div>
-            <div class="col">
-                <div class="video-btn" data-toggle="modal" data-src="<?php echo get_field('youtube_video_url'); ?>" data-target="#myModal">
-                    <img src=" <?php echo get_field('video_image'); ?>" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <div class="container main_sec">
+        <div class="container main_sec">
       <div class="row">
         <div class="col-md-12">
           <h3 class="mb-3 mt-3 head_secondary text-center mb-5"><span>PrimaSolv</span> Delivery Process</h3>
         <ul class="delivery-process_list">
           <li>Infrastructure Provisioning</li>
           <li>Configuration Management</li>
-          <li>Continuous integration</li>
+          <li>Continuous Integration</li>
           <li>Deployment Orchestration</li>
           <li>Monitor & Alert</li>
         </ul>
       </div>
       </div>
-    </div>
-
+    </div>  
 <div class="main_sec bg-white">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col">
-                <img src="<?php echo get_field("about_primasolv_image"); ?>" alt="">
+            <div class="col-md-6 col-xs-12">
+              <div class="item">
+                <figure class="image-box">
+                  <img src="<?php echo get_field("about_primasolv_image"); ?>" alt="" class="img-responsive">
+                </figure>
+              </div>
             </div>
-            <div class="col">
-                <h2 class="main_head">About <span>PrimaSolv</span></h2>
-               <?php echo get_field("about_primasolv__content"); ?>
-
-              <a href="<?php echo site_url('about'); ?>" class="btn btn-primary btn-sm btn-rounded">Read More..</a>
-            </div>
+      
+       <div class="col-md-6 col-xs-12">
+              <div class="item clearfix">
+                <div class="sec-title">
+                  <h2 class="main_head">About <span>PrimaSolv</span></h2>
+                </div>
+                <div class="content-box"><?php echo get_field("about_primasolv__content"); ?>                
+                </div>
+              </div>
+        </div>
+      
+            
         </div>
     </div>
 </div>
+
+
+
+
+  
 <?php
           $loop = new WP_Query( array(
               'post_type' => 'testmonials',
@@ -163,14 +160,18 @@
             )
           );
           ?>
+
+
+
 <!-- Testimonial Slider -->
+<!--
 <div class="container main_sec">
   <div class="row justify-content-center pb-5">
   <div class="col-md-8">
       <h3 class="mb-3 mt-3 main_head text-center">Testimonials</h3>
     <div id="testimonial_slider" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
-        <?php $i=0; while ( $loop->have_posts() ) : $loop->the_post(); ?>
+         <?php $i=0; while ( $loop->have_posts() ) : $loop->the_post(); ?>
 
                  <div class="carousel-item <?php if($i==0) echo 'active'; ?>">
                     <div class="tsm_user text-center">
@@ -182,8 +183,7 @@
                    <div class="text-center"><?php  the_content(); ?></div>
                 </div>
 
-        <?php $i++; endwhile; wp_reset_query(); ?>     
-        
+        <?php $i++; endwhile; wp_reset_query(); ?>   
       </div>
       <a class="carousel-control-prev" href="#testimonial_slider" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -196,7 +196,8 @@
     </div>
   </div>
 </div>
-</div>
+</div> -->
+<!-- end test -->
 <?php
           $loop = new WP_Query( array(
               'post_type' => 'clients',
@@ -206,15 +207,15 @@
           ?>
 <div class="main_sec bg-white container-fluid">
     <div class="row align-items-center">
-        <div class="col-3 pl-5">
+        <div class="col-md-3 col-sm-6 col-xs-12">
             <h3 class="mb-3 mt-3 main_head pl-5">PrimaSolv <span>Clients</span></h3>
             
         </div>
-        <div class="col-9">
+       <div class="col-md-9 col-xs-12">
             <!-- Top content -->
             <div id="clients-slider" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
-                  <?php $i=0; while ( $loop->have_posts() ) : $loop->the_post(); ?>
+                   <?php $i=0; while ( $loop->have_posts() ) : $loop->the_post(); ?>
               <li data-target="#clients-slider" data-slide-to="<?php echo $i; ?>" class="<?php if($i==0) echo 'active'; ?>"></li>
 <?php $i++; endwhile; wp_reset_query(); ?> 
                 </ol>
@@ -222,18 +223,19 @@
                   <div class="carousel-item active">
                       <div class="row">
                           <?php $i=0; while ( $loop->have_posts() ) : $loop->the_post(); ?>
-                        <div class="col-3"><img src="<?php echo get_field('client_logo'); ?>" alt=""></div>
+                        <div class="col-md-3 col-sm-6 col-xs-12 text-center"><img src="<?php echo get_field('client_logo'); ?>" alt=""></div>
                      <?php $i++; endwhile; wp_reset_query(); ?> 
                     </div>
                   </div>
                   <div class="carousel-item">
                         <div class="row">
                           <?php $i=0; while ( $loop->have_posts() ) : $loop->the_post(); ?>
-                        <div class="col-3"><img src="<?php echo get_field('client_logo'); ?>" alt=""></div>
+                        <div class="col-md-3 col-sm-6 col-xs-12 text-center"><img src="<?php echo get_field('client_logo'); ?>" alt=""></div>
                      <?php $i++; endwhile; wp_reset_query(); ?> 
                       </div>
                     </div>
                 </div>
+               
                 <a class="carousel-control-prev" href="#clients-slider" role="button" data-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                   <span class="sr-only">Previous</span>

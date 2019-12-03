@@ -15,11 +15,11 @@
 
 <!-- Footer - start -->
 <footer class="footer">
-	<div class="container footer-top">
+  <div class="container footer-top">
         <div class="row">
-            <div class="footer-menu col">
-                <p>About</p>                
-                  <?php
+            <div class="footer-menu col-md-4 col-sm-6 col-12">
+               <p>Company</p>
+                <?php
             $defaults = array(
                 'theme_location'  => 'footer',
                 'menu'            => '',
@@ -33,8 +33,8 @@
             wp_nav_menu( $defaults );
             ?>
             </div>
-            <div class="footer-menu col">
-                <p>Information</p>
+            <div class="footer-menu col-md-4 col-sm-6 col-12">
+                <p>Services</p>
                  <?php
             $defaults = array(
                 'theme_location'  => 'information',
@@ -49,8 +49,8 @@
             wp_nav_menu( $defaults );
             ?>
             </div>
-            <div class="footer-menu col">
-                <p>Services</p>
+            <div class="footer-menu col-md-4 col-sm-6 col-12">
+               <p>Product</p>
                 <?php
             $defaults = array(
                 'theme_location'  => 'services',
@@ -65,60 +65,21 @@
             wp_nav_menu( $defaults );
             ?>
             </div>
-            <div class="footer-info col-5">
-                <p class="footer-msg">Our online support is available <a class="callback" href="#">Send us a message</a></p>
-                <ul class="footer-social">
-                    <li>
-                        <a rel="nofollow" target="_blank" href="<?php echo get_field('facebook',5); ?>">
-                            <i class="fa fa-facebook"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a rel="nofollow" target="_blank" href="mailto:<?php echo get_field('email',5); ?>">
-                            <i class="fa fa-paper-plane"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a rel="nofollow" target="_blank" href="<?php echo get_field('pinterest',5); ?>">
-                            <i class="fa fa-pinterest-p"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a rel="nofollow" target="_blank" href="<?php echo get_field('youtube',5); ?>">
-                            <i class="fa fa-youtube-play"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a rel="nofollow" target="_blank" href="<?php echo get_field('twitter',5); ?>">
-                            <i class="fa fa-twitter"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a rel="nofollow" target="_blank" href="<?php echo get_field('google',5); ?>">
-                            <i class="fa fa-google-plus"></i>
-                        </a>
-                    </li>
-                    
-                </ul>
-                <form action="#" class="form-validate">
-                    <input data-required="text" data-required-email="email" type="text" placeholder="Email address" name="email1">
-                    <input type="submit" value="Subscribe">
-                </form>
-            </div>
-          
+           
         </div>
-		
-		
-		
+    
+    
+    
 
-		
+    
 
-	</div>
-	<div class="copyright">
-		<p class="text-light">© 2019 PrimaSolv All Right Received. Design by <a href="http://www.webmobilez.com" target="_blank">WebMobilez.com</a></p>
-	</div>
+  </div>
+  <div class="copyright">
+    <p class="text-light">©2004-2019 PrimaSolv All Right Reserved. Design by <a href="http://www.webmobilez.com" target="_blank">WebMobilez.com</a></p>
+  </div>
 </footer>
 <!-- Footer - end -->
+
 
 
 <!-- Modal -->
@@ -150,42 +111,20 @@
 <script src="<?php echo get_template_directory_uri(); ?>/js/bootstrap/bootstrap.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.accordion.js"></script>
 
-<script>
-$(document).ready(function() {
 
-// Gets the video src from the data-src on each button
-
-var $videoSrc;  
-$('.video-btn').click(function() {
-    $videoSrc = $(this).data( "src" );
-});
-console.log($videoSrc);
-
-// when the modal is opened autoplay it  
-$('#myModal').on('shown.bs.modal', function (e) {
-    
-// set the video src to autoplay and not to show related video. Youtube related video is like a box of chocolates... you never know what you're gonna get
-$("#video").attr('src',$videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0" ); 
-})
-
-// stop playing the youtube video when I close the modal
-$('#myModal').on('hide.bs.modal', function (e) {
-    // a poor man's stop video
-    $("#video").attr('src',$videoSrc); 
-}) 
-
-// document ready  
-});
-</script>
 
 <script>    
-    $("#accordion").awsAccordion({
-      type:"horizontal",
+  
+if ($(window).width() > 768) {
+  $("#accordion").awsAccordion({
+      type: "horizontal",
       cssAttrsHor:{
           ulWidth:"responsive",
           liHeight:380,
-        	liWidth:100
+          liWidth:100,
+          responsiveMedia : false
       },
+      
       startSlide:3,
       openCloseHelper:{
           openIcon:"plus",
@@ -197,6 +136,28 @@ $('#myModal').on('hide.bs.modal', function (e) {
       autoPlay:false,
       autoPlaySpeed:2000
     })
+}else{
+  $("#accordion").awsAccordion({
+      type: "vertical",
+      cssAttrsVer:{
+          ulWidth:"responsive",
+          liHeight:50,
+          liWidth:100
+      },
+      
+      startSlide:3,
+      openCloseHelper:{
+          openIcon:"plus",
+          closeIcon:"minus"
+      },
+      openOnebyOne:true,
+      classTab:"small",
+      slideOn:"click",
+      autoPlay:false,
+      autoPlaySpeed:2000
+    })
+}
+
     </script>
 
 

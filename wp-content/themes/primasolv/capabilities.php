@@ -12,7 +12,7 @@ template Name: Capabilities
         <div class="container b-crumbs">
             <ul>
                 <li>
-                    <a href="index.html">PrimaSolv</a>
+                    <a href="<?php echo site_url(''); ?>">PrimaSolv</a>
                 </li>
                 <li>
                     <span>Capabilities</span>
@@ -23,8 +23,7 @@ template Name: Capabilities
 
 <!-- Main Content - start -->
 <main>
-
-        <div class="container maincont">
+    <div class="container maincont">
 
                <!-- What Makes Us Special Start -->
     <section class="bg-sky-blue pb-0 capabilities">
@@ -37,7 +36,7 @@ template Name: Capabilities
                     Our Capabilities
                   </h1>
                 </div>
-                <!-- Heading Main -->
+                         <!-- Heading Main -->
       <?php
           $loop = new WP_Query( array(
               'post_type' => 'capabilities',
@@ -48,7 +47,7 @@ template Name: Capabilities
            <?php $i=0; while ( $loop->have_posts() ) : $loop->the_post(); ?>
                 <div class="col-md-4 wow fadeInUp" data-wow-duration="0" data-wow-delay="0.1s">            
                   <!-- Icon Box 2 -->
-                  <a href="service-details.html">
+                  <a href="#">
                     <div class="icon-box-4 h-100">
                     <?php echo get_field('icon'); ?>
                       <h4 class="h4-md mb-3"><?php the_title(); ?></h4>
@@ -71,8 +70,8 @@ template Name: Capabilities
           </section>
           <!-- What Makes Us Special End -->
 
-        </div>            
-            
+        </div>      
+
 
 
 </main>

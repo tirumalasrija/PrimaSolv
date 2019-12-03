@@ -7,6 +7,19 @@ template Name: Contact
 
 
 <style type="text/css">
+	.map-responsive{
+    overflow:hidden;
+    padding-bottom:50%;
+    position:relative;
+    height:0;
+}
+.map-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
   .contacts-form form input[type=email] {
   border: 1px solid #e0e4f6;
     border-radius: 3px;
@@ -40,13 +53,16 @@ input.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required.wpcf7-not-valid 
    
     border: 1px solid red !important;
 }
+	div.wpcf7-response-output{
+		margin: -2em 0.5em 1em !important;
+	}
 </style>
 <!-- Breadcrumbs -->
 <div class="b-crumbs-wrap">
         <div class="container b-crumbs">
             <ul>
                 <li>
-                    <a href="index.html">PrimaSolv</a>
+                    <a href="<?php echo site_url(''); ?>">PrimaSolv</a>
                 </li>
                 <li>
                     <span>Contact</span>
@@ -100,28 +116,15 @@ input.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required.wpcf7-not-valid 
             </div>
 
             <!-- Map -->
-<div class="contacts-map" id="contacts-map"></div>
+<!--<div class="container-fluid">
+    <div class="map-responsive">
+ <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2941.613291645755!2d-83.51862138453926!3d42.49977327917779!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8824a8cf4bcfcbd1%3A0xad9c11e07d29e11a!2s28345%20Beck%20Rd%20%23306%2C%20Wixom%2C%20MI%2048393%2C%20USA!5e0!3m2!1sen!2sin!4v1574668076235!5m2!1sen!2sin" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+</div>
+</div> -->
+ <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2941.613291645755!2d-83.51862138524972!3d42.49977327917779!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8824a8cf4bcfcbd1%3A0xad9c11e07d29e11a!2s28345%20Beck%20Rd%20%23306%2C%20Wixom%2C%20MI%2048393%2C%20USA!5e0!3m2!1sen!2sin!4v1574706298019!5m2!1sen!2sin"  width="100%" height="400" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
 
 </main>
 <!-- Main Content - end -->
-<script src="https://maps.googleapis.com/maps/api/js"></script>
-<script>
-"use strict";
-function initialize() {
-  var mapOptions = {
-    zoom: 15,
-    scrollwheel: false,
-    center: new google.maps.LatLng(40.440128, -79.974326)
-  };
-  var map = new google.maps.Map(document.getElementById('contacts-map'),
-    mapOptions);
-  var marker = new google.maps.Marker({
-    position: map.getCenter(),
-    icon: 'img/marker.png',
-    map: map
-  });
-}
-google.maps.event.addDomListener(window, 'load', initialize);
-</script> 
+ 
 
 <?php get_footer(); ?>
