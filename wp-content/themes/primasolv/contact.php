@@ -75,10 +75,6 @@ input.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required.wpcf7-not-valid 
 <main>
 
         <div class="container maincont">
-
-                <h1><span>Contact</span></h1>
-                <span class="maincont-line1 maincont-line12"></span>
-                <span class="maincont-line2 maincont-line22"></span>
             
                 <!-- Contacts - start -->
                 <div class="pagecont contacts">
@@ -106,10 +102,10 @@ input.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required.wpcf7-not-valid 
                           <?php echo get_field('business_hours'); ?>
                         </li>
                     </ul>
-                    <div class="contacts-form">
+<!--                     <div class="contacts-form">
                         <h3>Send us a message</h3>
                        <?php echo do_shortcode('[contact-form-7 id="133" title="Contact form 1"]'); ?>
-                    </div>
+                    </div> -->
                 </div>
                 <!-- Contacts - end -->
             

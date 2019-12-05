@@ -44,9 +44,6 @@ template Name: Application Development
 <!-- applicatin-->
 	    <div class="container maincont">
 
-                <span class="maincont-line1 maincont-line12"></span>
-                <span class="maincont-line2 maincont-line22"></span>
-
             <!-- What Makes Us Special Start -->
     <section class="wide-tb-80 pagecont p-5">
             <div class="container pos-rel">
@@ -132,8 +129,35 @@ template Name: Application Development
           </div>
         </div>
 			
-            <div class="col-md-12 abtt_blue mt-5"> <?php echo get_field('bottom_content'); ?>
-</div>
+    <!--        <div class="col-md-12 abtt_blue mt-5"> <?php echo get_field('bottom_content'); ?>
+</div> -->
+			<div class="container">
+          <div class="row align-items-center mt-5 mb-5 flex-xs-revse">
+
+			 <div class="col-md-6 col-xs-12">
+							<div class="item clearfix">
+								<div class="sec-title web-mobi1">
+									
+								</div>
+								<div class="content-box web-mobi1">
+									  <?php echo get_field('bottom_content'); ?><br>
+               
+									
+								</div>
+							</div>
+				
+						</div>
+			<div class="col-md-6 col-xs-12 ">
+							<div class="item">
+								<figure class="image-box">
+									<img src="<?php echo get_field('bottom_mage'); ?>" alt="" class="img-responsive">
+								</figure>
+							</div>
+            </div>
+            
+            </div>
+          </div>
+
 	
 			
 		

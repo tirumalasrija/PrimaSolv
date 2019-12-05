@@ -54,8 +54,7 @@ template Name: Prima-Genx
 
   <div class="container maincont">
 
-                <span class="maincont-line1 maincont-line12"></span>
-                <span class="maincont-line2 maincont-line22"></span>
+               
 
             <!-- What Makes Us Special Start -->
     <section class="wide-tb-80 pagecont p-5">

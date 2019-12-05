@@ -137,7 +137,7 @@
        <div class="col-md-6 col-xs-12">
               <div class="item clearfix">
                 <div class="sec-title">
-                  <h2 class="main_head">About <span>PrimaSolv</span></h2>
+                  <h2 class="main_head"> <span>About PrimaSolv</span></h2>
                 </div>
                 <div class="content-box"><?php echo get_field("about_primasolv__content"); ?>                
                 </div>

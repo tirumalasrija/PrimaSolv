@@ -9,18 +9,13 @@
 <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700&amp;subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/bootstrap/bootstrap.css">
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/styles28.css">
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/styles29.css">
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/styles2.css">
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/font-awesome.min.css">
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/responsive28.css">
 
 	<?php wp_head(); ?>
-	<style>
-	.header .navbar-nav .nav-link {
-    padding: 6px 40px 7px 40px !important;
-    cursor: pointer !important;
-}
-	</style>
+	
 </head>
 
 <body <?php body_class(); ?>>

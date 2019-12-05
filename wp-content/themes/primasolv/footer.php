@@ -75,7 +75,7 @@
 
   </div>
   <div class="copyright">
-    <p class="text-light">©2004-2019 PrimaSolv All Right Reserved. Design by <a href="http://www.webmobilez.com" target="_blank">WebMobilez.com</a></p>
+    <p class="text-light">PrimaSolv All Right Reserved.</p>
   </div>
 </footer>
 <!-- Footer - end -->
